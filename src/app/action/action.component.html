@@ -1,0 +1,4 @@
+<div *ngIf="action" [ngSwitch]="action.type" class="mb-1">
+  <app-manual *ngSwitchCase="ActionType.MANUAL" [action]="action" [index]="index"></app-manual>
+  <app-auto *ngSwitchCase="ActionType.AUTO" [action]="action" [index]="index" [isInList]="isInList"></app-auto>
+</div>

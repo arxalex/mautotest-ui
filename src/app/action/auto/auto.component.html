@@ -1,0 +1,19 @@
+<div class="card bg-auto" *ngIf="action">
+  <div class="card-body p-1 d-inline-flex align-items-center">
+    <span class="me-2">{{ action.name }}</span>
+    <div *ngIf="isInList" class="d-inline-flex me-2">
+      <app-action-arg *ngFor="let arg of action.args" [arg]="arg"></app-action-arg>
+    </div>
+    <div class="btn-group ms-auto">
+      <button *ngIf="action.description !== undefined" (click)="info()" class="btn btn-secondary px-1 py-0">
+        <i class="bi bi-info-lg"></i>
+      </button>
+      <button *ngIf="!isInList" (click)="add()" class="btn btn-success px-1 py-0">
+        <i class="bi bi-plus-lg"></i>
+      </button>
+      <button *ngIf="isInList" (click)="remove()" class="btn btn-danger px-1 py-0">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+  </div>
+</div>
