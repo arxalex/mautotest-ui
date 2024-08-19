@@ -1,0 +1,9 @@
+<div class="card bg-manual" *ngIf="action">
+  <div class="card-body p-1 d-flex">
+    <app-text-edit [text]="action.name" (textChanged)="action.name = $event"  [placeholder]="'Manual Action'" class="flex-fill me-2"></app-text-edit>
+    <button (click)="remove()" class="btn btn-danger px-1 py-0">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+</div>
+

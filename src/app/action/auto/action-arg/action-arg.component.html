@@ -1,0 +1,4 @@
+<div *ngIf="arg" class="d-inline-flex align-items-center bg-tag px-2 me-1">
+  <span>{{ arg.name }}:</span>
+  <app-text-edit [text]="arg.value" (textChanged)="arg.value = $event" [placeholder]="arg.type" [withButton]="true" class="px-0 m-1"></app-text-edit>
+</div>

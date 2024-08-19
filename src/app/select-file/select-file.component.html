@@ -1,0 +1,21 @@
+<div class="modal fade show d-block">
+  <div class="modal-dialog modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Select File</h5>
+        <button (click)="hide()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="file" (change)="onFileSelected($event)" />
+        <div
+          class="drop-zone"
+          (dragover)="onDragOver($event)"
+          (drop)="onDrop($event)"
+          (dragleave)="onDragLeave($event)"
+        >
+          <p>Drag and drop files here</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="d-inline-flex p-0">
+  <span *ngIf="!isEdit" (click)="isEdit = true" [class]="textClass">{{ text }}</span>
+  <div *ngIf="isEdit" class="input-group px-0">
+    <input type="text" [(ngModel)]="text" (ngModelChange)="onTextChange($event)" class="form-control" [placeholder]="placeholder">
+    <button *ngIf="!withButton" (click)="isEdit = false" class="btn btn-primary">OK</button>
+  </div>
+  <button *ngIf="withButton" class="btn py-0 px-1" (click)="isEdit = !isEdit">
+    <i class="bi bi-pencil-fill"></i>
+  </button>
+</div>

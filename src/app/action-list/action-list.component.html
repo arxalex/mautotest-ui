@@ -1,0 +1,12 @@
+<div *ngIf="actionList" cdkDropList (cdkDropListDropped)="drop($event)" class="px-0 mb-2">
+  <div
+    *ngFor="let action of actionList; let i = index"
+    cdkDrag
+    (cdkDragStarted)="dragStarted($event)"
+    (cdkDragEnded)="dragEnded($event)"
+    [ngClass]="{'opacity-25': isDragging}">
+    <app-action [action]="action" [isInList]="true" [index]="i"></app-action>
+  </div>
+</div>
+<hr>
+<button (click)="addManualAction()" class="btn btn-secondary">Add manual step</button>
