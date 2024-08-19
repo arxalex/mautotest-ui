@@ -91,7 +91,6 @@ export class TestCaseService {
         if (match[2] && action.args && action.args.length && match[2].length) {
           const args = match[2].split(', ');
           for (let i = 0; i < action.args.length; i++) {
-            console.log(args[i]);
             action.args[i].value = action.args[i].type === TypeEnum.STRING ? args[i].replace(/\\?"|"/g, '') : args[i];
           }
         }
